@@ -1,0 +1,8 @@
+```
+open ~/.zshrc
+```
+
+
+```
+exec zsh
+```

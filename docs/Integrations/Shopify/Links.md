@@ -1,0 +1,5 @@
+1. [Getting Started](https://shopify.dev/apps/getting-started/create)
+2. [Graphql Docs](https://shopify.dev/api/admin/graphql/reference)
+3. [Graphql Interface](https://shopify-graphiql-app.shopifycloud.com)
+4. [Partner Login](https://partners.shopify.com)
+5. [Polaris](https://polaris.shopify.com)
