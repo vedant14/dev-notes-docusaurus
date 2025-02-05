@@ -28,8 +28,6 @@ git checkout <branchname>
 git commit --amend -m"Bug fix for the head tag"
 ```
 
-
-
 - Git reset 
 - To [undo every change](https://www.theserverside.com/video/Dont-git-revert-that-last-commit-git-reset-instead) that has happened since a given commit occurred, use git reset
 ```
