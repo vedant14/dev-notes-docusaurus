@@ -1,3 +1,5 @@
+# Terminal
+
 ```
 open ~/.zshrc
 ```
