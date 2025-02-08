@@ -34,6 +34,9 @@ const readMarkdownFiles = (dir, basePath = "") => {
         title = basePath.split("/").pop().replace(".md", "");;
       }
 
+      if(title === "index.md"){
+        console.log(entry.name);
+      }
       documents.push({
         id: relativePath.replace(/\.md$/, ""), // Unique ID
         title: title,

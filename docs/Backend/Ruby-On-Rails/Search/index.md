@@ -1,6 +1,5 @@
-search.md
+# Search
 
-Ave
 
 ```ruby
 	name = "independent_action_item:independent_action_item"
