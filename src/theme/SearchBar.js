@@ -13,6 +13,14 @@ const Search = () => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   useEffect(() => {
+    fetch("/search-index.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setIndex(lunr.Index.load(data.index));
+        setDocs(data.docs);
+      })
+      .catch((err) => console.error("Failed to load search index", err));
+
     const handleKeyPress = (event) => {
       if (typeof navigator !== "undefined" && event.key === "/") {
         event.preventDefault();
@@ -23,18 +31,6 @@ const Search = () => {
     document.addEventListener("keydown", handleKeyPress);
     return () => document.removeEventListener("keydown", handleKeyPress);
   }, []);
-
-  useEffect(() => {
-    if (query.length > 0) {
-      fetch("/search-index.json")
-        .then((res) => res.json())
-        .then((data) => {
-          setIndex(lunr.Index.load(data.index));
-          setDocs(data.docs);
-        })
-        .catch((err) => console.error("Failed to load search index", err));
-    }
-  }, [query]);
 
   const handleSearch = (e) => {
     const searchTerm = e.target.value.toLowerCase();
@@ -51,6 +47,9 @@ const Search = () => {
       const searchResults = index
         .search(lunrQuery)
         .map(({ ref }) => docs.find((doc) => doc.id === ref));
+      if (searchResults.length > 0) {
+        setSelectedIndex(0);
+      }
       setResults(searchResults.slice(0, 10));
     } catch (err) {
       console.error("Search error:", err);
@@ -70,7 +69,7 @@ const Search = () => {
     } else if (e.key === "Enter" && selectedIndex >= 0) {
       e.preventDefault();
       resultsRef.current?.children[selectedIndex]?.querySelector("a")?.click();
-      setQuery('');
+      setQuery("");
       setResults([]);
     }
   };
@@ -95,6 +94,7 @@ const Search = () => {
             >
               <Link href={result.url} className="search-result-item">
                 {result.title}
+                <p className="subdued">{result.url.split("/").slice(-2, -1)[0]}</p>
               </Link>
             </li>
           ))}

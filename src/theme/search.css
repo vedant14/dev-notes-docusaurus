@@ -41,7 +41,8 @@
 .search-result-item {
   display: block;
   padding: 12px;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 400;
   color: #333;
   text-decoration: none;
   transition: background 0.2s;
@@ -61,7 +62,17 @@
 }
 
 /* Highlight selected search result */
-.search-results .selected {
+.selected > .search-result-item {
   background: #007bff;
   color: white;
+}
+
+.subdued {
+  font-size: 12px;
+  color: #7b7a7c !important;
+  margin: 0;
+}
+
+.selected > .search-result-item > .subdued {
+  color: white !important;
 }
