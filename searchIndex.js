@@ -32,7 +32,6 @@ const readMarkdownFiles = (dir, basePath = "") => {
       if (entry.name === "index.md") {
         urlPath = `/docs/${basePath}`;
         title = basePath.split("/").pop().replace(".md", "");;
-        console.log(entry.name, title, urlPath);
       }
 
       documents.push({
