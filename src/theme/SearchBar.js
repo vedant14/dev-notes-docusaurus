@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import lunr from "lunr";
-import "./Search.css"; // Import custom styles
+import "./search.css"; // Import custom styles
 import Link from "@docusaurus/Link";
 
 const Search = () => {
