@@ -83,7 +83,7 @@ const Search = () => {
         ref={inputRef}
         onChange={handleSearch}
         onKeyDown={handleKeyDown}
-        placeholder="🔍 Search documentation..."
+        placeholder="🔍 Use / to search"
         className="search-input"
       />
       {results.length > 0 && (
