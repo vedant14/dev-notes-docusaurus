@@ -5,10 +5,10 @@
 
 
 ## To create docker image
-
+- locally
 ```
-
-
+docker build -t image-name .
+docker run -p 3000:3000 image-name
 ```
 
 

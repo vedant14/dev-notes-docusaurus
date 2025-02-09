@@ -1,0 +1,13 @@
+.rootContainer {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
